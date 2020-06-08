@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://changsl231.xyz/"/>
-  <updated>2020-06-08T15:15:54.451Z</updated>
+  <updated>2020-06-08T15:18:30.853Z</updated>
   <id>http://changsl231.xyz/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://changsl231.xyz/2020/06/08/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://changsl231.xyz/2020/06/08/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
     <published>2020-06-08T15:11:10.000Z</published>
-    <updated>2020-06-08T15:15:54.451Z</updated>
+    <updated>2020-06-08T15:18:30.853Z</updated>
     
-    <content type="html"><![CDATA[<p>这是一个Markdown的学习博客</p><h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><font color = 'red'><p>你好呀</p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2>]]></content>
+    <content type="html"><![CDATA[<p>这是一个Markdown的学习博客</p><a id="more"></a><h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><font color = 'red'><p>你好呀</p></font><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;这是一个Markdown的学习博客&lt;/p&gt;
-&lt;h1 id=&quot;Markdown&quot;&gt;&lt;a href=&quot;#Markdown&quot; class=&quot;headerlink&quot; title=&quot;Markdown&quot;&gt;&lt;/a&gt;Markdown&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介
-      
+      &lt;p&gt;这是一个Markdown的学习博客&lt;/p&gt;
     
     </summary>
     
