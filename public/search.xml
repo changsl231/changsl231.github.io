@@ -8,13 +8,13 @@
       <link href="/2020/06/07/test/"/>
       <url>/2020/06/07/test/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h1><ol><li><p>文字输入</p></li><li><p>代码输入</p><a id="more"></a><pre><code>`print（hello）`</code></pre></li><li><p>图片<br><img src="%E2%80%AAC:%5CUsers%5Ccsl%5CDesktop%5Cfavicon.ico" alt=""></p></li><li></li></ol>]]></content>
       
       
       
         <tags>
             
-            <tag> 测试 </tag>
+            <tag> 测试，图片 </tag>
             
         </tags>
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://changsl231.xyz/"/>
-  <updated>2020-06-08T08:18:11.107Z</updated>
+  <updated>2020-06-08T13:20:38.828Z</updated>
   <id>http://changsl231.xyz/</id>
   
   <author>
@@ -21,15 +21,22 @@
     <link href="http://changsl231.xyz/2020/06/07/test/"/>
     <id>http://changsl231.xyz/2020/06/07/test/</id>
     <published>2020-06-07T15:50:29.000Z</published>
-    <updated>2020-06-08T08:18:11.107Z</updated>
+    <updated>2020-06-08T13:20:38.828Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h1><ol><li><p>文字输入</p></li><li><p>代码输入</p><a id="more"></a><pre><code>`print（hello）`</code></pre></li><li><p>图片<br><img src="%E2%80%AAC:%5CUsers%5Ccsl%5CDesktop%5Cfavicon.ico" alt=""></p></li><li></li></ol>]]></content>
     
     <summary type="html">
+    
+      &lt;h1 id=&quot;第一次&quot;&gt;&lt;a href=&quot;#第一次&quot; class=&quot;headerlink&quot; title=&quot;第一次&quot;&gt;&lt;/a&gt;第一次&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;文字输入&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;代码输入&lt;/p&gt;
     
     </summary>
     
     
     
-      <category term="测试" scheme="http://changsl231.xyz/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试，图片" scheme="http://changsl231.xyz/tags/%E6%B5%8B%E8%AF%95%EF%BC%8C%E5%9B%BE%E7%89%87/"/>
     
   </entry>
   
