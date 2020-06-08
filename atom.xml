@@ -5,9 +5,9 @@
   <subtitle>留白的博客</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://changsl231.xyz/"/>
   <updated>2020-06-08T08:18:11.107Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://changsl231.xyz/</id>
   
   <author>
     <name>changsl231</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>test</title>
-    <link href="http://yoursite.com/2020/06/07/test/"/>
-    <id>http://yoursite.com/2020/06/07/test/</id>
+    <link href="http://changsl231.xyz/2020/06/07/test/"/>
+    <id>http://changsl231.xyz/2020/06/07/test/</id>
     <published>2020-06-07T15:50:29.000Z</published>
     <updated>2020-06-08T08:18:11.107Z</updated>
     
@@ -29,14 +29,14 @@
     
     
     
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="http://changsl231.xyz/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2020/06/07/hello-world/"/>
-    <id>http://yoursite.com/2020/06/07/hello-world/</id>
+    <link href="http://changsl231.xyz/2020/06/07/hello-world/"/>
+    <id>http://changsl231.xyz/2020/06/07/hello-world/</id>
     <published>2020-06-07T12:24:19.537Z</published>
     <updated>2020-06-08T08:17:47.033Z</updated>
     
@@ -52,10 +52,10 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+      <category term="Hexo" scheme="http://changsl231.xyz/categories/Hexo/"/>
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://changsl231.xyz/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
