@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://changsl231.xyz/"/>
-  <updated>2020-06-08T13:54:53.306Z</updated>
+  <updated>2020-06-08T15:15:54.451Z</updated>
   <id>http://changsl231.xyz/</id>
   
   <author>
@@ -17,52 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test2</title>
-    <link href="http://changsl231.xyz/2020/06/08/test2/"/>
-    <id>http://changsl231.xyz/2020/06/08/test2/</id>
-    <published>2020-06-08T13:37:18.000Z</published>
-    <updated>2020-06-08T13:54:53.306Z</updated>
+    <title>Markdown学习笔记</title>
+    <link href="http://changsl231.xyz/2020/06/08/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://changsl231.xyz/2020/06/08/Markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-06-08T15:11:10.000Z</published>
+    <updated>2020-06-08T15:15:54.451Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>这是一个图片测试</p></blockquote><pre><code>hello word</code></pre><a id="more"></a><p><img src="../test2/favicon.ico" alt="测试图片"></p><center><img src="../test2/favicon.ico" widith="100%" />文件结构图</center><p><a href="[http://changsl.xyz](http://changsl.xyz)" title="博客网站"><a href="http://changsl.xyz" target="_blank" rel="noopener">http://changsl.xyz</a></a></p><h2 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h2><p><a href="http://changsl.xyz" target="_blank" rel="noopener" title="123">http://changsl.xyz</a></p>]]></content>
+    <content type="html"><![CDATA[<p>这是一个Markdown的学习博客</p><h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><font color = 'red'><p>你好呀</p><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2>]]></content>
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;这是一个图片测试&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;hello word&lt;/code&gt;&lt;/pre&gt;
+      
+      
+        &lt;p&gt;这是一个Markdown的学习博客&lt;/p&gt;
+&lt;h1 id=&quot;Markdown&quot;&gt;&lt;a href=&quot;#Markdown&quot; class=&quot;headerlink&quot; title=&quot;Markdown&quot;&gt;&lt;/a&gt;Markdown&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介
+      
     
     </summary>
     
     
-      <category term="测试" scheme="http://changsl231.xyz/categories/%E6%B5%8B%E8%AF%95/"/>
+      <category term="Markdown" scheme="http://changsl231.xyz/categories/Markdown/"/>
     
     
-      <category term="图片" scheme="http://changsl231.xyz/tags/%E5%9B%BE%E7%89%87/"/>
+      <category term="Markdown" scheme="http://changsl231.xyz/tags/Markdown/"/>
     
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://changsl231.xyz/2020/06/07/test/"/>
-    <id>http://changsl231.xyz/2020/06/07/test/</id>
-    <published>2020-06-07T15:50:29.000Z</published>
-    <updated>2020-06-08T13:20:38.828Z</updated>
+      <category term="blog" scheme="http://changsl231.xyz/tags/blog/"/>
     
-    <content type="html"><![CDATA[<h1 id="第一次"><a href="#第一次" class="headerlink" title="第一次"></a>第一次</h1><ol><li><p>文字输入</p></li><li><p>代码输入</p><a id="more"></a><pre><code>`print（hello）`</code></pre></li><li><p>图片<br><img src="%E2%80%AAC:%5CUsers%5Ccsl%5CDesktop%5Cfavicon.ico" alt=""></p></li><li></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;第一次&quot;&gt;&lt;a href=&quot;#第一次&quot; class=&quot;headerlink&quot; title=&quot;第一次&quot;&gt;&lt;/a&gt;第一次&lt;/h1&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;文字输入&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;代码输入&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="测试，图片" scheme="http://changsl231.xyz/tags/%E6%B5%8B%E8%AF%95%EF%BC%8C%E5%9B%BE%E7%89%87/"/>
+      <category term="html" scheme="http://changsl231.xyz/tags/html/"/>
     
   </entry>
   
