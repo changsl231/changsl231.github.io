@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>Untitled</title>
+      <link href="/2020/08/07/Untitled/"/>
+      <url>/2020/08/07/Untitled/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>【吴恩达深度学习】课程四-卷积神经网络-第一周编程作业</title>
+      <link href="/2020/08/07/%E3%80%90%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E5%9B%9B-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E7%AC%AC%E4%B8%80%E5%91%A8%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A/"/>
+      <url>/2020/08/07/%E3%80%90%E5%90%B4%E6%81%A9%E8%BE%BE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%91%E8%AF%BE%E7%A8%8B%E5%9B%9B-%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-%E7%AC%AC%E4%B8%80%E5%91%A8%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A/</url>
+      
+        <content type="html"><![CDATA[<h1 id="【吴恩达深度学习】课程四-卷积神经网络-第一周编程作业"><a href="#【吴恩达深度学习】课程四-卷积神经网络-第一周编程作业" class="headerlink" title="【吴恩达深度学习】课程四-卷积神经网络-第一周编程作业"></a>【吴恩达深度学习】课程四-卷积神经网络-第一周编程作业</h1><h2 id="作业1：Convolutional-Neural-Networks-Application"><a href="#作业1：Convolutional-Neural-Networks-Application" class="headerlink" title="作业1：Convolutional Neural Networks: Application"></a>作业1：Convolutional Neural Networks: Application</h2><p>欢迎来到第四门课，在本节课，你将会学到：</p><ul><li><p>完成在实现Tensorflow模型时将使用的辅助函数</p></li><li><p>用Tensorflow完成一个卷积网络<br><strong>完成本节安排的课程内容，你将能够：</strong></p></li><li><p>使用Tensorflow框架搭建并训练一个卷积神经网络来解决分类任务<br>在开始之前我们假定你已经熟练掌握了Tensorflow深度学习框架。如果没有的话，可以回过头去学习课程2（<em>improving deep neural networks</em>）第三周的课程 <em>Tensorflow tutorial</em>。</p><a id="more"></a><h2 id="1-0-TensorFlow-model"><a href="#1-0-TensorFlow-model" class="headerlink" title="1.0-TensorFlow model"></a>1.0-TensorFlow model</h2></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 吴恩达深度学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 深度学习 </tag>
+            
+            <tag> tensorflow </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu jupyternotebook添加keanel被拒绝</title>
       <link href="/2020/07/29/jupyternotebook%E6%B7%BB%E5%8A%A0keanel%E8%A2%AB%E6%8B%92%E7%BB%9D/"/>
       <url>/2020/07/29/jupyternotebook%E6%B7%BB%E5%8A%A0keanel%E8%A2%AB%E6%8B%92%E7%BB%9D/</url>
@@ -76,9 +116,9 @@
       
         <tags>
             
-            <tag> 翻译 </tag>
+            <tag> 深度学习 </tag>
             
-            <tag> s深度学习 </tag>
+            <tag> 翻译 </tag>
             
         </tags>
       
@@ -103,9 +143,9 @@
       
         <tags>
             
-            <tag> 深度学习 </tag>
-            
             <tag> pytorch </tag>
+            
+            <tag> 深度学习 </tag>
             
         </tags>
       
