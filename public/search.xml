@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>图像去噪</title>
+      <link href="/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/"/>
+      <url>/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="图像去噪"><a href="#图像去噪" class="headerlink" title="图像去噪"></a>图像去噪</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020084444.tiff" alt="原始图像"></p><center> <font size = 3>图1. 原始图像</font></center><a id="more"></a>]]></content>
+      
+      
+      <categories>
+          
+          <category> CV </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CV </tag>
+            
+            <tag> DL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu jupyternotebook添加keanel被拒绝</title>
       <link href="/2020/07/29/jupyternotebook%E6%B7%BB%E5%8A%A0keanel%E8%A2%AB%E6%8B%92%E7%BB%9D/"/>
       <url>/2020/07/29/jupyternotebook%E6%B7%BB%E5%8A%A0keanel%E8%A2%AB%E6%8B%92%E7%BB%9D/</url>
