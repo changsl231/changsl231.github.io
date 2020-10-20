@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://changsl231.xyz/"/>
-  <updated>2020-10-20T00:53:12.202Z</updated>
+  <updated>2020-10-20T00:59:46.549Z</updated>
   <id>http://changsl231.xyz/</id>
   
   <author>
@@ -21,13 +21,14 @@
     <link href="http://changsl231.xyz/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/"/>
     <id>http://changsl231.xyz/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/</id>
     <published>2020-10-20T00:33:53.000Z</published>
-    <updated>2020-10-20T00:53:12.202Z</updated>
+    <updated>2020-10-20T00:59:46.549Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="图像去噪"><a href="#图像去噪" class="headerlink" title="图像去噪"></a>图像去噪</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020084444.tiff" alt="原始图像"></p><center> <font size = 3>图1. 原始图像</font></center><a id="more"></a>]]></content>
+    <content type="html"><![CDATA[<h1 id="图像去噪"><a href="#图像去噪" class="headerlink" title="图像去噪"></a>图像去噪</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020085904.png#pic_center" alt=""></p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020084444.tiff" alt="原始图像"></p><center> <font size = 3>图1. 原始图像</font></center><a id="more"></a>]]></content>
     
     <summary type="html">
     
       &lt;h1 id=&quot;图像去噪&quot;&gt;&lt;a href=&quot;#图像去噪&quot; class=&quot;headerlink&quot; title=&quot;图像去噪&quot;&gt;&lt;/a&gt;图像去噪&lt;/h1&gt;&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020085904.png#pic_center&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020084444.tiff&quot; alt=&quot;原始图像&quot;&gt;&lt;/p&gt;
 &lt;center&gt; &lt;font size = 3&gt;图1. 原始图像&lt;/font&gt;&lt;/center&gt;
     
