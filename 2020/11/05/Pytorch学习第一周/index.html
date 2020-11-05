@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico">
+  <link rel="mask-icon" href="/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"changsl231.xyz","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+
+
+
+  <meta name="description" content="Pytorch学习第一周">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pytorch学习第一周">
+<meta property="og:url" content="http://changsl231.xyz/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/index.html">
+<meta property="og:site_name" content="留白">
+<meta property="og:description" content="Pytorch学习第一周">
+<meta property="article:published_time" content="2020-11-05T06:37:18.000Z">
+<meta property="article:modified_time" content="2020-11-05T06:37:18.081Z">
+<meta property="article:author" content="changsl231">
+<meta property="article:tag" content="pytorch">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://changsl231.xyz/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Pytorch学习第一周 | 留白</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?6faac9aac40657143542ade36c033816";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="留白" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">留白</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">留白的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/changsl231" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://changsl231.xyz/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/favicon.ico">
+      <meta itemprop="name" content="changsl231">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="留白">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pytorch学习第一周
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-11-05 14:37:18" itemprop="dateCreated datePublished" datetime="2020-11-05T14:37:18+08:00">2020-11-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/deeplearning/" itemprop="url" rel="index"><span itemprop="name">deeplearning</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/" class="post-meta-item leancloud_visitors" data-flag-title="Pytorch学习第一周" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Pytorch学习第一周"><a href="#Pytorch学习第一周" class="headerlink" title="Pytorch学习第一周"></a>Pytorch学习第一周</h1><a id="more"></a>
+
+<h2 id="1-张量简介与创建"><a href="#1-张量简介与创建" class="headerlink" title="1.张量简介与创建"></a>1.张量简介与创建</h2><h3 id="1-1Tensor概念"><a href="#1-1Tensor概念" class="headerlink" title="1.1Tensor概念"></a>1.1Tensor概念</h3><ol>
+<li>张量是什么？<blockquote>
+<p>张量是一个<strong>多维数组</strong>，他是向量标量矩阵的高维扩展。</p>
+</blockquote>
+</li>
+<li>Tensor 与Variable之间的关系？<blockquote>
+<p>Variable（0.4版本之前）是torch.autograd中的数据类型，主要用于封装Tensor,进行自动求导</p>
+</blockquote>
+</li>
+<li>Tensor的属性：<blockquote>
+<ul>
+<li>data：张量的数值</li>
+<li>dtype:张量的数据类型</li>
+<li>shape:张量的形状</li>
+<li>device:张量所在的设备，GPU/CPU</li>
+<li>requires_grad:是不是需要求导</li>
+<li>grad:张量的导数</li>
+<li>grad_fn: 张量的计算公式</li>
+<li>is_leaf:是不是叶子节点，在计算图的时候会用到</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="1-2-张量的创建"><a href="#1-2-张量的创建" class="headerlink" title="1.2 张量的创建"></a>1.2 张量的创建</h3><ol>
+<li>直接创建</li>
+</ol>
+<ul>
+<li>torch.tensor()<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr = np.ones((<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">t = torch.tensor(arr,device=<span class="string">'cuda'</span>)</span><br><span class="line">print(t)</span><br></pre></td></tr></table></figure></li>
+<li>torch.from_numpy(ndarray)</li>
+</ul>
+<p><strong>注意:</strong> tensor和ndarray共享内存，一个改变另一个也会改变 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">arr = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">t = torch.from_numpy(arr)</span><br><span class="line">print(<span class="string">'修改tensor：'</span>)</span><br><span class="line">t[<span class="number">0</span>,<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">print(<span class="string">'numpy:'</span>,arr)</span><br><span class="line">print(<span class="string">'tensor:'</span>,t)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>依据数值创建</li>
+</ol>
+<ul>
+<li>torch.zeros()<br>功能：依据size创建全0张量</li>
+</ul>
+<p><strong>注意</strong>：out参数用来存放torch.zeros()生成的张量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">out_t = torch.tensor([<span class="number">1</span>])</span><br><span class="line">t = torch.zeros((<span class="number">3</span>,<span class="number">3</span>),out=out_t)</span><br><span class="line">print(t,<span class="string">'\n'</span>,out_t)</span><br><span class="line">print(id(t),id(out_t),id(t)==id(out_t))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>torch.zeros_like()<br>功能：依据形状创建全零张量</li>
+<li>torch.ones()</li>
+<li>torch.ones_like()</li>
+<li>torch.full()</li>
+<li>torch.full_like()</li>
+<li>torch.arrange()<br>功能：创建等差数列的张量</li>
+</ul>
+<p><strong>注意</strong>：是半开区间</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = torch.arrange(<span class="number">2</span>,<span class="number">10</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>torch.linspace()<br>功能：创建一个等差数列<br>注意：是闭合的区间<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = torch.linspace(<span class="number">1</span>,<span class="number">10</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure></li>
+<li>torch.logspace()<br>功能：依对数创建张量，base:是指底数</li>
+<li>torch.eye()<br>功能：创建对角矩阵，默认为方阵</li>
+</ul>
+<ol start="3">
+<li>依据概率分布创建张量</li>
+</ol>
+<ul>
+<li>torch.normal()<br>功能：生成正态分布（高斯分布），mean：均值；std：标注差<br>四种模式：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mean为标量，std为标量</span></span><br><span class="line">t_normal = torch.normal(<span class="number">0</span>,<span class="number">1</span>,size(<span class="number">4</span>,))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mean为标量，std为张量</span></span><br><span class="line">std = torch.arrange(<span class="number">1</span>,<span class="number">5</span>,dtype=torch.float)</span><br><span class="line">t_normal = torch.normal(<span class="number">1</span>,std)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mean为张量，std为标量</span></span><br><span class="line">mean = torch.arrange(<span class="number">1</span>,<span class="number">5</span>,dtype=torch.float)</span><br><span class="line">t_normal = torch.normal(mean,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># mean为张量，std为张量</span></span><br><span class="line">mean = torch.arrange(<span class="number">1</span>,<span class="number">5</span>,dtype=torch.float)</span><br><span class="line">std = torch.arrange(<span class="number">1</span>,<span class="number">5</span>,dtype=torch.float)</span><br><span class="line">t_normal = torch.normal(mean,std)</span><br></pre></td></tr></table></figure></li>
+<li>torch.randn()<br>功能：创建均值为0，标准差为1的正态分布</li>
+<li>torch.randn_like()</li>
+<li>torch.rand()<br>功能：创建均匀分布的张量</li>
+<li>torch.rand_like()<br>功能：在区间[0,1)上，生成均匀分布</li>
+<li>torch.randint()</li>
+<li>torch.randint_like()<br>功能：区间[low,high)生成整数均与分布</li>
+<li>torch.randperm()<br>功能：生成从0到n-1的随机排列</li>
+<li>torch.bernoulli()<br>功能：以input为概率，生成伯努利分布（0-1分布，两点分布）<h2 id="2-张量操作与线性回归"><a href="#2-张量操作与线性回归" class="headerlink" title="2. 张量操作与线性回归"></a>2. 张量操作与线性回归</h2><h3 id="2-1-张量的操作：拼接、切分、索引和变换"><a href="#2-1-张量的操作：拼接、切分、索引和变换" class="headerlink" title="2.1 张量的操作：拼接、切分、索引和变换"></a>2.1 张量的操作：拼接、切分、索引和变换</h3></li>
+</ul>
+<ol>
+<li>张量拼接与切分</li>
+</ol>
+<ul>
+<li>torch.cat()<br>功能:将张量按维度dim进行拼接<blockquote>
+<p>torch.cat(tensors,dim=0,out=None)</p>
+<ul>
+<li>tensors: 张量序列</li>
+<li>dim:要拼接的维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = torch.ones((<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">t_0 = torch.cat([t,t],dim=<span class="number">0</span>)</span><br><span class="line">t_1 = torch.cat([t,t]dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
+<li>torch.stack()<br>功能：在新创建的维度dim上进行拼接<blockquote>
+<p>tensor.stack(tensors,dim=0,out=None)</p>
+<ul>
+<li>tensors:张量序列</li>
+<li>dim:要拼接的维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = torch.ones((<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">t_stack = torch.stack([t,t],dim=<span class="number">2</span>)</span><br></pre></td></tr></table></figure></li>
+<li>torch.chunk()<br>功能：将张量按维度dim进行平均切分<br>返回值：张量列表<br>注意事项：若不能整除，最后一份张量小于其他张量<blockquote>
+<p>torch.chunk(input,chunks,dim=0)</p>
+<ul>
+<li>inputs:要切分的张量</li>
+<li>chunks:要切分的份数</li>
+<li>dim:要切分的维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a = torch.ones((<span class="number">2</span>,<span class="number">5</span>))</span><br><span class="line">list_of_tensors = torch.chunk(a,chunks=<span class="number">3</span>,dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
+<li>torch.split()<br>功能：将张量按维度dim进行切分<br>返回值：张量列表<blockquote>
+<p>torch.split(tensor,split_size_or_sections,dim=0)</p>
+<ul>
+<li>tensor:要切分的张量</li>
+<li>split_size_or_sections:为int时，表示每一份的长度；为list时，按list元素切分</li>
+<li>dim:要切分的维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = torch.ones((<span class="number">2</span>,<span class="number">5</span>))</span><br><span class="line">list_of_tensors_1 = torch.split(a,<span class="number">3</span>,dim=<span class="number">1</span>)</span><br><span class="line">list_of_tensors_2 = torch.split(a,[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>],dim=<span class="number">1</span>)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="2">
+<li>张量的索引</li>
+</ol>
+<ul>
+<li><p>torch.index_select()<br>功能：在维度dim上，按index索引数据<br>返回值：依据index索引数据拼接的张量</p>
+<blockquote>
+<ul>
+<li>input: 要索引的张量</li>
+<li>dim:要索引的维度</li>
+<li>index:要索引的序列号</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = torch.randint(<span class="number">0</span>,<span class="number">9</span>,size=(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">idx =torch.tensor([<span class="number">0</span>,<span class="number">2</span>],dtype=torch.long)</span><br><span class="line">t_select = torch.index_select(t,dim=<span class="number">0</span>,index=idx)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>torch.masked_select()<br>功能：按mask中的True进行索引<br>返回值：一维张量</p>
+<blockquote>
+<p>torch.masked_select(input,mask,out=None)</p>
+<ul>
+<li>input:要索引的张量</li>
+<li>mask:与input同形状的不二类型张量</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">t = torch.randint(<span class="number">0</span>,<span class="number">9</span>,size=(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">mask = t.ge(<span class="number">5</span>) <span class="comment"># ge是大于等于的意思</span></span><br><span class="line">t_select = torch.masked_select(t,mask)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="3">
+<li>张量变换</li>
+</ol>
+<ul>
+<li><p>torch.reshape()<br>功能：变换张量形状<br>注意事项：当张量在内存中是连续时，新张量与input共享数据存储内存</p>
+<blockquote>
+<p>torch.reshape(input,shape)</p>
+<ul>
+<li>input:要变换的张量</li>
+<li>shape：新张量的形状</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = torch.randperm(<span class="number">8</span>)</span><br><span class="line">t_reshape = torch.reshape(t,(<span class="number">-1</span>,<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>torch.transpose()<br>功能：交换张量的两个维度</p>
+<blockquote>
+<p>torch.transpose(input,dim0,dim1)</p>
+<ul>
+<li>input:要交换的张量</li>
+<li>dim0:要交换的维度</li>
+<li>dim1:要交换的维度</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = torch.rand((<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>))</span><br><span class="line">t_transpose = torch.transpose(t,dim0=<span class="number">1</span>,dim1=<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>torch.t()<br>功能：2维张量转置，对矩阵而言，等价于torch.transpose(input,0,1)</p>
+</li>
+<li><p>torch.squeeze()<br>功能：压缩常速为1的维度（轴）</p>
+<blockquote>
+<p>torch.squeeze(input,dim=None,out=None)</p>
+<ul>
+<li>dim:若为None，移除所有长度为1的轴；若指定维度，当且仅当该轴长度为1时，可以被移除</li>
+</ul>
+</blockquote>
+</li>
+<li><p>torch.unsqueeze()<br>功能：依据dim扩展维度</p>
+<blockquote>
+<p>torch.unsequeeze(input,dim,out=None)<br>dim:扩展的维度</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-2-张量的数学运算"><a href="#2-2-张量的数学运算" class="headerlink" title="2.2 张量的数学运算"></a>2.2 张量的数学运算</h3><ol>
+<li>加减乘除<blockquote>
+<ul>
+<li>torch.add(input,alpha=1,other,out=None)<br>功能：逐原素计算input+alpha * other</li>
+<li>torch.addcdiv()</li>
+<li>torch.sub()</li>
+<li>torch.div()</li>
+<li>torch.mul()</li>
+</ul>
+</blockquote>
+</li>
+<li>对数，指数，幂函数<blockquote>
+<ul>
+<li>torch.log(input,out =None)</li>
+<li>torch.log10(input,out=None)</li>
+<li>torch.log2(input,out=None)</li>
+<li>torch.exp(input,out=None)</li>
+<li>torch,pow()</li>
+</ul>
+</blockquote>
+</li>
+<li>三角函数<blockquote>
+<ul>
+<li>torch.abs(input,out=None)</li>
+<li>torch.acos(input,out=None)</li>
+<li>torch.cosh(input,out=None)</li>
+<li>torch.cos(input,out=None)</li>
+<li>torch.asin(input,out=None)</li>
+<li>torch.atan(input,out=None)</li>
+<li>torch.atan2(input,other,out=None)</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-3-线性回归"><a href="#2-3-线性回归" class="headerlink" title="2.3 线性回归"></a>2.3 线性回归</h3><p><strong>线性回归是分析<font color = 'red'>一个</font>变量与另外一（多）个变量之间关系的方法</strong></p>
+<blockquote>
+<p>线性回归求解步骤：</p>
+<ol>
+<li>确定模型：Model：y = wx+b</li>
+<li>选择损失函数： MSE: L1Loss,交叉熵损失</li>
+<li>求解梯度并更新w,b w = w - LR* w.grad;b = b-LR*b.grad</li>
+</ol>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">lr = <span class="number">0.001</span> <span class="comment"># 设置学习率</span></span><br><span class="line"><span class="comment"># 创建训练数据</span></span><br><span class="line">x = torch.rand(<span class="number">20</span>,<span class="number">1</span>) * <span class="number">10</span> </span><br><span class="line">y = <span class="number">2</span>*x + (<span class="number">5</span> + torch.randn(<span class="number">20</span>,<span class="number">1</span>))</span><br><span class="line"><span class="comment"># 构建线性回归参数</span></span><br><span class="line">w = torch.randn((<span class="number">1</span>),requires_grad=<span class="literal">True</span>)</span><br><span class="line">b = torch.randn((<span class="number">1</span>),requires_grad=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> iteration <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">	<span class="comment">#前向传播</span></span><br><span class="line">	wx = torch.mul(w,x)</span><br><span class="line">	y_pred = torch.add(wx,b)</span><br><span class="line">	</span><br><span class="line">	<span class="comment">#计算loss</span></span><br><span class="line">	loss=(<span class="number">0.5</span>*(y-y_pred)**<span class="number">2</span>).mean()</span><br><span class="line">	</span><br><span class="line">	<span class="comment">#反向传播</span></span><br><span class="line">	loss.backward()</span><br><span class="line">	</span><br><span class="line">	<span class="comment">#更新参数</span></span><br><span class="line">	b.data.sub_(lr * b.grad)</span><br><span class="line">	w.data.sub_(lr * w.grad)</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 绘图</span></span><br><span class="line">	<span class="keyword">if</span> iteration % <span class="number">20</span> == <span class="number">0</span>:</span><br><span class="line">		plt.scatter(x.data.numpy(),y.data.numpy())</span><br><span class="line">		plt.plot(x.data.numpy(),y_pred.data.numpy(),<span class="string">'r-'</span>,lw=<span class="number">5</span>)</span><br><span class="line">		plt.text(<span class="number">2</span>,<span class="number">20</span>,<span class="string">'Loss=%.4f'</span>%loss.data.numpy(),fontdict=&#123;<span class="string">'size'</span>:<span class="number">20</span>,<span class="string">'color'</span>:<span class="string">'red'</span>&#125;)</span><br><span class="line">		plt.xlim(<span class="number">1.5</span>,<span class="number">10</span>)</span><br><span class="line">		plt.ylim(<span class="number">8</span>,<span class="number">28</span>)</span><br><span class="line">		plt.title(<span class="string">"Iteration:&#123;&#125;\nw：&#123;&#125; b:&#123;&#125;"</span>.format(iteration,w.data.numpy(),b.data.numpy()))</span><br><span class="line">		plt.pause(<span class="number">3</span>)</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> loss.data.numpy() &lt; <span class="number">1</span>:</span><br><span class="line">		<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-计算图与动态图机制"><a href="#3-计算图与动态图机制" class="headerlink" title="3.计算图与动态图机制"></a>3.计算图与动态图机制</h2><h3 id="3-1-计算图"><a href="#3-1-计算图" class="headerlink" title="3.1 计算图"></a>3.1 计算图</h3><p>计算图是用来描述运算的有向无环图<br>计算图有两个主要元素：节点（Node)和边（Edge)<br>好处：计算简洁，求导方便<br>叶子节点：用户创建的节点称为叶子节点，是整个计算图的根基<br>retain_grad()保存非叶子节点的梯度</p>
+<h3 id="3-2-动态图机制"><a href="#3-2-动态图机制" class="headerlink" title="3.2 动态图机制"></a>3.2 动态图机制</h3><p>根据计算图搭建方式，可将计算图分为动态图和静态图。<br>动态图：运算与搭建同时进行。pytorch、自由行；灵活、易调节<br>静态图：先搭建图，后运算。tensorflow、跟团旅行；高效、不灵活</p>
+<h2 id="4-autograd与逻辑回归"><a href="#4-autograd与逻辑回归" class="headerlink" title="4.autograd与逻辑回归"></a>4.autograd与逻辑回归</h2><h3 id="4-1-autograd-自动求导系统"><a href="#4-1-autograd-自动求导系统" class="headerlink" title="4.1 autograd-自动求导系统"></a>4.1 autograd-自动求导系统</h3><ul>
+<li><p>torch.autograd.backward<br>功能：自动求取梯度</p>
+<blockquote>
+<p>torch.autograd.backward(tensors,grad_tensors=None,retain_grad_None,create_graph=False)</p>
+<ul>
+<li>tensors: 用于求导的张量，如loss</li>
+<li>retain_graph: 保存计算图</li>
+<li>create_graph: 创建导数计算图，用于高阶计算</li>
+<li>grad_tensors:多梯度权重</li>
+</ul>
+</blockquote>
+</li>
+<li><p>torch.autograd.grad()<br>功能：求取梯度</p>
+<blockquote>
+<p>torch.autograd.grad(outputs,inputs,grad_outputs=None,retain_grad=None,create_graph=False)</p>
+<ul>
+<li>outputs:用于求导的张量，如loss</li>
+<li>inputs:需要梯度的张量</li>
+<li>retain_graph: 保存计算图</li>
+<li>create_graph: 创建导数计算图，用于高阶计算</li>
+<li>grad_tensors:多梯度权重</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<p><font color  = 'red'>1. 梯度不会自动清零，记得手动清零2. 所有依赖叶子节点的节点，requires_grad都为True3. 叶子节点不能执行in_place操作</font></p>
+<h3 id="4-2-逻辑回归"><a href="#4-2-逻辑回归" class="headerlink" title="4.2 逻辑回归"></a>4.2 逻辑回归</h3><p>逻辑回归(对数几率回归)是线性的二分类模型。<br>线性回归是分析自变量X与因变量Y（标量）之间关系的方法；<br>逻辑回归是分析自变量X与因变量Y（概率）之间关系的方法。</p>
+<blockquote>
+<p>机器学习模型训练的步骤:</p>
+<p>迭代训练：{<br>    - 数据：数据采集，清洗，预处理<br>    - 模型：根据任务复杂程度，选择不同的模型<br>    - 损失函数：根据任务而定<br>    - 优化器：求导，梯度优化<br>}</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">sample_nums = <span class="number">100</span></span><br><span class="line">mean_value = <span class="number">1.7</span></span><br><span class="line">bias =<span class="number">1</span></span><br><span class="line"><span class="comment"># 1.生成数据</span></span><br><span class="line">n_data = torch.ones(sample_nums,<span class="number">2</span>)</span><br><span class="line">x0 = torch.normal(mean_value * n_data,<span class="number">1</span>) + bias</span><br><span class="line">y0 = torch.zeros(sample_nums)</span><br><span class="line">x1 = torch.normal(-mean_value * n_data,<span class="number">1</span>) + bias</span><br><span class="line">y1 = torch.ones(sample_nums)</span><br><span class="line">train_x = torch.cat((x0,x1),<span class="number">0</span>)</span><br><span class="line">train_y = torch.cat((y0,y1),<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 选择模型</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LR</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">		super(LR,self).__init__()</span><br><span class="line">		self.features = nn.Linear(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">		self.sigmoid = nn.Sigmoid()</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self,x)</span>:</span></span><br><span class="line">		x = self.features(x)</span><br><span class="line">		x = self.sigmoid(x)</span><br><span class="line">		<span class="keyword">return</span> x</span><br><span class="line">		</span><br><span class="line">lr_net = LR()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.选择损失函数</span></span><br><span class="line">loss_fn = nn.BCELoss()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.选择优化器</span></span><br><span class="line">lr = <span class="number">0.01</span></span><br><span class="line">optimizer = torch.optim.SGD(lr_net.parameters(),lr=lr,momentum=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.模型训练</span></span><br><span class="line"><span class="keyword">for</span> iteration <span class="keyword">in</span> range(<span class="number">1000</span>):</span><br><span class="line">	<span class="comment">#前向传播</span></span><br><span class="line">	y_pred = lr_net(train_x)</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 计算loss</span></span><br><span class="line">	loss = loss_fn(y_pred.squeeze(),train_y)</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 反向传播</span></span><br><span class="line">	loss.backward()</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 更新参数</span></span><br><span class="line">	optimizer.step()</span><br><span class="line">	</span><br><span class="line">	<span class="comment"># 绘图</span></span><br><span class="line">	<span class="keyword">if</span> iteration % <span class="number">20</span>:</span><br><span class="line">		mask = y_pred.ge(<span class="number">0.5</span>).float().squeeze() </span><br><span class="line">		correct = (mask == train_y).sum()</span><br><span class="line">		acc = correct.item() / train_y.size(<span class="number">0</span>)</span><br><span class="line">		</span><br><span class="line">		plt.scatter(x0.data.numpy()[:,<span class="number">0</span>],x0.data.numpy()[:,<span class="number">1</span>],c=<span class="string">'r'</span>,label=<span class="string">'class 0'</span>)</span><br><span class="line">		plt.scatter(x1.data.numpy()[:,<span class="number">0</span>],x1.data.numpy()[:,<span class="number">1</span>],c=<span class="string">'b'</span>,label=<span class="string">'class 1'</span>)</span><br><span class="line">		</span><br><span class="line">		w0,w1 = lr_net.features.weight[<span class="number">0</span>]</span><br><span class="line">		w0,w1 = float(w0.item()),float(w1.item())</span><br><span class="line">		plot_b = float(lr_net.features.bias[<span class="number">0</span>].item())</span><br><span class="line">		plot_x = np.arange(<span class="number">-6</span>,<span class="number">6</span>,<span class="number">0.1</span>)</span><br><span class="line">		plot_y = (-w0 * plot_x - plot_b) / w1</span><br><span class="line">		</span><br><span class="line">		plt.xlim(<span class="number">-5</span>,<span class="number">7</span>)</span><br><span class="line">		plt.ylim(<span class="number">-7</span>,<span class="number">7</span>)</span><br><span class="line">		plt.plot(plot_x,plot_y)</span><br><span class="line">		</span><br><span class="line">		plt.text(<span class="number">-5</span>,<span class="number">5</span>,<span class="string">'Loss=%.4f'</span>%loss.data.numpy(),fontdict=&#123;<span class="string">'size'</span>:<span class="number">20</span>,<span class="string">'color'</span>:<span class="string">'red'</span>&#125;)</span><br><span class="line">		plt.title(<span class="string">"Iteration:&#123;&#125;\nw0:&#123;:.2f&#125; w1:&#123;:.2f&#125; accuracy:&#123;:.2%&#125;"</span>.format(iteration,w0,w1,plot_b,acc))</span><br><span class="line">		plt.legend()</span><br><span class="line">		plt.show()</span><br><span class="line">        plt.pause(<span class="number">0.5</span>)</span><br><span class="line">        </span><br><span class="line">		<span class="keyword">if</span> acc &gt; <span class="number">0.99</span>:</span><br><span class="line">			<span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>changsl231
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://changsl231.xyz/2020/11/05/Pytorch%E5%AD%A6%E4%B9%A0%E7%AC%AC%E4%B8%80%E5%91%A8/" title="Pytorch学习第一周">http://changsl231.xyz/2020/11/05/Pytorch学习第一周/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <div>
+       
+         <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+       
+      </div>
+	  
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/" rel="prev" title="图像去噪">
+      <i class="fa fa-chevron-left"></i> 图像去噪
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Pytorch学习第一周"><span class="nav-text">Pytorch学习第一周</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-张量简介与创建"><span class="nav-text">1.张量简介与创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1Tensor概念"><span class="nav-text">1.1Tensor概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-张量的创建"><span class="nav-text">1.2 张量的创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-张量操作与线性回归"><span class="nav-text">2. 张量操作与线性回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-张量的操作：拼接、切分、索引和变换"><span class="nav-text">2.1 张量的操作：拼接、切分、索引和变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-张量的数学运算"><span class="nav-text">2.2 张量的数学运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-线性回归"><span class="nav-text">2.3 线性回归</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-计算图与动态图机制"><span class="nav-text">3.计算图与动态图机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-计算图"><span class="nav-text">3.1 计算图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-动态图机制"><span class="nav-text">3.2 动态图机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-autograd与逻辑回归"><span class="nav-text">4.autograd与逻辑回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-autograd-自动求导系统"><span class="nav-text">4.1 autograd-自动求导系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-逻辑回归"><span class="nav-text">4.2 逻辑回归</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="changsl231"
+      src="/favicon.ico">
+  <p class="site-author-name" itemprop="name">changsl231</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">changsl231</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">10k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">9 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'OUyuhJwHyLxVCsrsONyuW1N1-gzGzoHsz',
+      appKey     : 'xSfkpMdj5pTHuN08a7h7pSIk',
+      placeholder: "唠两句呗",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+  
+ 
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":145,"height":320},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
