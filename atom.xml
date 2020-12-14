@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://changsl231.xyz/"/>
-  <updated>2020-11-05T06:37:18.081Z</updated>
+  <updated>2020-12-14T09:32:29.786Z</updated>
   <id>http://changsl231.xyz/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>markdown学习笔记</title>
+    <link href="http://changsl231.xyz/2020/12/14/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://changsl231.xyz/2020/12/14/markdown%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-12-14T09:32:29.000Z</published>
+    <updated>2020-12-14T09:32:29.786Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="markdown学习笔记"><a href="#markdown学习笔记" class="headerlink" title="markdown学习笔记"></a>markdown学习笔记</h1><h2 id="1-设置标题"><a href="#1-设置标题" class="headerlink" title="1.设置标题"></a>1.设置标题</h2><p>markdown可以通过 <code>#</code> 来设置不同的标题</p><a id="more"></a><p>例如： </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br></pre></td></tr></table></figure><p>效果如下：<br><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201214170915.png#pic_center" alt="标题示意图"></p><h2 id="2-插入图像"><a href="#2-插入图像" class="headerlink" title="2.插入图像"></a>2.插入图像</h2><h3 id="2-1-插入图像"><a href="#2-1-插入图像" class="headerlink" title="2.1 插入图像"></a>2.1 插入图像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![图片名称](图像的地址#pic_center)</span><br><span class="line">例如：</span><br><span class="line">![图像展示](C:\Users\csl\Desktop\图像展示.png#piccenter)</span><br><span class="line">其中，&#96;pic_center&#96;的作用是让图片居中</span><br></pre></td></tr></table></figure><h2 id="2-2-设置图像名称"><a href="#2-2-设置图像名称" class="headerlink" title="2.2 设置图像名称"></a>2.2 设置图像名称</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span><span class="tag">&lt;<span class="name">font</span> <span class="attr">size</span> = <span class="string">3</span>&gt;</span>图像展示<span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line">// center：设置文字对齐方式</span><br><span class="line">// font size：设置文字大小</span><br></pre></td></tr></table></figure><p>显示效果如下所示：<br><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201214172830.png#pic_center" alt="image-20201214172830146"></p><center><font size = 3>图像展示</font></center>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;markdown学习笔记&quot;&gt;&lt;a href=&quot;#markdown学习笔记&quot; class=&quot;headerlink&quot; title=&quot;markdown学习笔记&quot;&gt;&lt;/a&gt;markdown学习笔记&lt;/h1&gt;&lt;h2 id=&quot;1-设置标题&quot;&gt;&lt;a href=&quot;#1-设置标题&quot; class=&quot;headerlink&quot; title=&quot;1.设置标题&quot;&gt;&lt;/a&gt;1.设置标题&lt;/h2&gt;&lt;p&gt;markdown可以通过 &lt;code&gt;#&lt;/code&gt; 来设置不同的标题&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Pytorch学习第一周</title>
@@ -36,33 +55,6 @@
     
     
       <category term="pytorch" scheme="http://changsl231.xyz/tags/pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>图像去噪</title>
-    <link href="http://changsl231.xyz/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/"/>
-    <id>http://changsl231.xyz/2020/10/20/%E5%9B%BE%E5%83%8F%E5%8E%BB%E5%99%AA/</id>
-    <published>2020-10-20T00:33:53.000Z</published>
-    <updated>2020-10-20T12:19:28.655Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="图像去噪"><a href="#图像去噪" class="headerlink" title="图像去噪"></a>图像去噪</h1><h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h2><p>目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020091009.png#pic_center" alt="原始图像"></p><center> <font size = 3>图1. 原始图像</font></center><a id="more"></a><h2 id="2-去除横纹"><a href="#2-去除横纹" class="headerlink" title="2. 去除横纹"></a>2. 去除横纹</h2><h3 id="2-1-高斯滤波器"><a href="#2-1-高斯滤波器" class="headerlink" title="2.1 高斯滤波器"></a>2.1 高斯滤波器</h3><p>代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">lena = cv.imread(<span class="string">"1.tiff"</span>)</span><br><span class="line">gauss = cv.GaussianBlur(lena, (<span class="number">3</span>, <span class="number">3</span>), <span class="number">0</span>)</span><br><span class="line">cv.imshow(<span class="string">'gauss'</span>, gauss)</span><br><span class="line">cv.imshow(<span class="string">'lena'</span>, lena)</span><br><span class="line">cv.waitKey()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure><p>结果如下：</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020103757.png#pic_center" alt=""></p><center> <font size = 3>图2. 高斯滤波器处理后的结果</font></center><h3 id="2-2-中值滤波"><a href="#2-2-中值滤波" class="headerlink" title="2.2 中值滤波"></a>2.2 中值滤波</h3><p>代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">lena = cv.imread(<span class="string">"1.tiff"</span>)</span><br><span class="line">median = cv.medianBlur(lena, <span class="number">3</span>)</span><br><span class="line">cv.imshow(<span class="string">"median"</span>, median)</span><br><span class="line">cv.imshow(<span class="string">'lena'</span>, lena)</span><br><span class="line">cv.waitKey()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure><p>结果如下：</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020104241.png#pic_center" alt=""></p><center> <font size = 3>图3. 中值滤波器处理后的结果</font></center><h3 id="2-3-形态学变化"><a href="#2-3-形态学变化" class="headerlink" title="2.3 形态学变化"></a>2.3 形态学变化</h3><p>代码如下：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2 <span class="keyword">as</span> cv</span><br><span class="line">lena = cv.imread(<span class="string">"1.tiff"</span>)</span><br><span class="line">morph = cv.morphologyEx(lena, cv.MORPH_OPEN, (<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line">cv.imshow(<span class="string">"morph"</span>, morph)</span><br><span class="line">cv.imshow(<span class="string">'lena'</span>, lena)</span><br><span class="line">cv.waitKey()</span><br><span class="line">cv.destroyAllWindows()</span><br></pre></td></tr></table></figure><p>结果如下：</p><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020104638.png" alt=""></p><center> <font size = 3>图4. 形态学变换处理后的结果</font></center><h3 id="2-4-0CT基本原理"><a href="#2-4-0CT基本原理" class="headerlink" title="2.4 0CT基本原理"></a>2.4 0CT基本原理</h3><p>OCT技术成像系统的主要构成是一个光纤迈克尔逊干涉仪。</p><p>OCT噪声分析：</p><ul><li>电子噪声：由图像采集电路阻性期间中的电子运动发热而产生的噪声；</li><li>光子噪声：由图像的广电转换器引起，特别是在弱光的条件下，噪声尤为强烈；</li><li>散斑噪声：由于光波的相干作用而在图像中产生的噪声。</li></ul><p>其中散斑噪声是OCT图像的主要噪声来源，他与成像组织表面的粗糙度偶关系，类似于超声影像中的噪声。从视觉角度上看来，这种噪声在图像中呈现斑点状分布。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;图像去噪&quot;&gt;&lt;a href=&quot;#图像去噪&quot; class=&quot;headerlink&quot; title=&quot;图像去噪&quot;&gt;&lt;/a&gt;图像去噪&lt;/h1&gt;&lt;h2 id=&quot;1-背景&quot;&gt;&lt;a href=&quot;#1-背景&quot; class=&quot;headerlink&quot; title=&quot;1.背景&quot;&gt;&lt;/a&gt;1.背景&lt;/h2&gt;&lt;p&gt;目前有一张小动物眼球光学断层相干扫描（Optical coherence tomography，OCT）照片，但是由于小鼠呼吸，造成图像中产生了蓝色伪影和水平条纹，现需要将在将蓝色伪影和横条纹去掉的情况下，对比度再高一点。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201020091009.png#pic_center&quot; alt=&quot;原始图像&quot;&gt;&lt;/p&gt;
-&lt;center&gt; &lt;font size = 3&gt;图1. 原始图像&lt;/font&gt;&lt;/center&gt;
-    
-    </summary>
-    
-    
-      <category term="CV" scheme="http://changsl231.xyz/categories/CV/"/>
-    
-    
-      <category term="CV" scheme="http://changsl231.xyz/tags/CV/"/>
-    
-      <category term="DL" scheme="http://changsl231.xyz/tags/DL/"/>
     
   </entry>
   
