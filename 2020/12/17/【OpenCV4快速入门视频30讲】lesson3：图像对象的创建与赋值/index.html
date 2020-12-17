@@ -23,23 +23,28 @@
 
 
 
-  <meta name="description" content="lesson2：图像色彩空间转换1.知识点使用cvcolor对图像色彩空间进行转换，imwrite保存图像">
+  <meta name="description" content="lesson3: 图像对象的创建与赋值1. 课程目标掌握OpenCV中Mat对象的创建、拷贝克隆与赋值。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换">
-<meta property="og:url" content="http://changsl231.xyz/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/index.html">
+<meta property="og:title" content="【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值">
+<meta property="og:url" content="http://changsl231.xyz/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/index.html">
 <meta property="og:site_name" content="留白">
-<meta property="og:description" content="lesson2：图像色彩空间转换1.知识点使用cvcolor对图像色彩空间进行转换，imwrite保存图像">
-<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201215171922.png">
-<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201215172226.png">
-<meta property="article:published_time" content="2020-12-15T08:58:07.236Z">
-<meta property="article:modified_time" content="2020-12-15T09:43:33.790Z">
+<meta property="og:description" content="lesson3: 图像对象的创建与赋值1. 课程目标掌握OpenCV中Mat对象的创建、拷贝克隆与赋值。">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217205656.png#pic_center">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217210939.png">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217211307.png">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217211535.png">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212211.png">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212534.png">
+<meta property="og:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212701.png">
+<meta property="article:published_time" content="2020-12-17T12:20:57.000Z">
+<meta property="article:modified_time" content="2020-12-17T13:27:54.128Z">
 <meta property="article:author" content="changsl231">
 <meta property="article:tag" content="OpenCV">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201215171922.png">
+<meta name="twitter:image" content="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217205656.png#pic_center">
 
-<link rel="canonical" href="http://changsl231.xyz/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/">
+<link rel="canonical" href="http://changsl231.xyz/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/">
 
 
 <script id="page-configurations">
@@ -52,7 +57,7 @@
   };
 </script>
 
-  <title>【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换 | 留白</title>
+  <title>【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值 | 留白</title>
   
 
 
@@ -213,7 +218,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://changsl231.xyz/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/">
+    <link itemprop="mainEntityOfPage" href="http://changsl231.xyz/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/favicon.ico">
@@ -226,7 +231,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换
+          【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值
         </h1>
 
         <div class="post-meta">
@@ -237,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-12-15 16:58:07 / 修改时间：17:43:33" itemprop="dateCreated datePublished" datetime="2020-12-15T16:58:07+08:00">2020-12-15</time>
+              <time title="创建时间：2020-12-17 20:20:57 / 修改时间：21:27:54" itemprop="dateCreated datePublished" datetime="2020-12-17T20:20:57+08:00">2020-12-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -250,7 +255,7 @@
             </span>
 
           
-            <span id="/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/" class="post-meta-item leancloud_visitors" data-flag-title="【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换" title="阅读次数">
+            <span id="/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/" class="post-meta-item leancloud_visitors" data-flag-title="【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -265,8 +270,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -276,7 +281,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -295,44 +300,59 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="lesson2：图像色彩空间转换"><a href="#lesson2：图像色彩空间转换" class="headerlink" title="lesson2：图像色彩空间转换"></a>lesson2：图像色彩空间转换</h1><h2 id="1-知识点"><a href="#1-知识点" class="headerlink" title="1.知识点"></a>1.知识点</h2><p>使用<code>cvcolor</code>对图像色彩空间进行转换，<code>imwrite</code>保存图像</p>
+        <h1 id="lesson3-图像对象的创建与赋值"><a href="#lesson3-图像对象的创建与赋值" class="headerlink" title="lesson3: 图像对象的创建与赋值"></a>lesson3: 图像对象的创建与赋值</h1><h2 id="1-课程目标"><a href="#1-课程目标" class="headerlink" title="1. 课程目标"></a>1. 课程目标</h2><p>掌握OpenCV中<code>Mat</code>对象的创建、拷贝克隆与赋值。</p>
 <a id="more"></a>
 
+<h2 id="2-图像对象的创建与赋值"><a href="#2-图像对象的创建与赋值" class="headerlink" title="2. 图像对象的创建与赋值"></a>2. 图像对象的创建与赋值</h2><h3 id="2-1-Mat的基本结构"><a href="#2-1-Mat的基本结构" class="headerlink" title="2.1 Mat的基本结构"></a>2.1 Mat的基本结构</h3><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217205656.png#pic_center" alt="Mat对象的基本结构"></p>
+<center><font size=3>图1. Mat对象的基本结构
+
+<p>Mat对象的基本结构如图1所示，每一个Mat对象由两部分组成：<code>头部</code>,<code>数据部分</code>;头部存储对象的一些基本信息，如图像的基本类型HSV、RGB、GRAY等以及数据的类型，unchar、float、double等。</p>
+<h3 id="2-2-Mat对象的克隆与拷贝"><a href="#2-2-Mat对象的克隆与拷贝" class="headerlink" title="2.2 Mat对象的克隆与拷贝"></a>2.2 Mat对象的克隆与拷贝</h3><p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Mat m1, m2;</span><br><span class="line">m1 = <span class="built_in">image</span>.clone();</span><br><span class="line"><span class="built_in">image</span>.copyTo(m2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-直接创建Mat对象"><a href="#2-3-直接创建Mat对象" class="headerlink" title="2.3 直接创建Mat对象"></a>2.3 直接创建Mat对象</h3><p>可以直接使用<code>zeros</code>和<code>ones</code>两个函数分别创建不同尺寸大小、数据类型和通道的图像。</p>
+<p>代码如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建空白对象</span></span><br><span class="line">Mat m3 = Mat::zeros(Size(<span class="number">8</span>, <span class="number">8</span>), CV_8UC3); <span class="comment">// CV_8: 8位 U: 无符号 3:3通道</span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt;<span class="string">"width:"</span>&lt;&lt; m3.cols &lt;&lt;<span class="string">" height:"</span>&lt;&lt; m3.rows &lt;&lt;<span class="string">" channel:"</span>&lt;&lt;m3.channels()&lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; m3 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">Mat m4 = Mat::ones(Size(<span class="number">8</span>, <span class="number">8</span>), CV_8UC3); <span class="comment">// CV_8: 8位 U: 无符号 3:3通道 </span></span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"width:"</span> &lt;&lt; m4.cols &lt;&lt; <span class="string">" height:"</span> &lt;&lt; m4.rows &lt;&lt; <span class="string">" channel:"</span> &lt;&lt; m4.channels() &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; m4 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结果图如下所示：</p>
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217210939.png" alt="image-20201217210938992"></p>
+<center><font size=3>创建空白Mat对象
+
+<h3 id="2-4-Mat对象的赋值"><a href="#2-4-Mat对象的赋值" class="headerlink" title="2.4 Mat对象的赋值"></a>2.4 Mat对象的赋值</h3><p>对一个通道赋值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m3 = <span class="number">127</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; m3 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217211307.png" alt="image-20201217211307457"></p>
+<center><font size=3>对一个通道赋值
+
+<p>对每个通道分别赋值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m4 = Scalar(<span class="number">127</span>,<span class="number">0</span>,<span class="number">255</span>);</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; m4 &lt;&lt; <span class="built_in">std</span>::<span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217211535.png" alt="image-20201217211535746"></p>
+<center><font size=3>对各个通道分别赋值
+
+<p>在对Mat对象进行赋值时，应使用<code>clone</code>或者<code>copyTo</code>而不能直接使用赋值<code>=</code>，这样做前一个对象和后一个对象共用一个存储地址，一个改变另一个也会改变。</p>
+<p>实验如下：</p>
 <ul>
-<li><p>读取图像</p>
+<li><p>使用<code>=</code>赋值</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//直接赋值</span></span><br><span class="line">m3 = Scalar(<span class="number">255</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_0"</span>,m3);</span><br><span class="line">m4 = m3;</span><br><span class="line">m4 = Scalar(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_1"</span>, m3);</span><br><span class="line">imshow(<span class="string">"m4"</span>, m4);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212211.png" alt="image-20201217212211936"></p>
 </li>
-<li><p>色彩空间转换函数 cvColor</p>
-<blockquote>
-<p>COLOR_BGR2GRAY = 6 彩色到灰度</p>
-<p>COLOR_GRAY2BGR = 8 灰度到彩色</p>
-<p>COLOR_BGR2HSV = 40 BGR到HSV</p>
-<p>COLOR_HSV2BGR = 54 HSV到BGR </p>
-</blockquote>
-</li>
-<li><p>图像保存-imwrite</p>
-<blockquote>
-<p>第一个参数是图像保存路径</p>
-<p>第二个参数是图像内存对象</p>
-</blockquote>
-<p>这样做的好处是改变图像亮度、饱和度的时候比较方便，处理完成后再返回到RGB图像通道。</p>
+<li><p>使用<code>clone</code>赋值</p>
 </li>
 </ul>
-<h2 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h2><p>quickopencv.h</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 创建一个QuickDemo类</span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">QuickDemo</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">colorSpace_Demo</span><span class="params">(Mat &amp;<span class="built_in">image</span>)</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m3 = Scalar(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_0"</span>, m3);</span><br><span class="line">m4 = m3.clone();</span><br><span class="line">m4 = Scalar(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_1"</span>, m3);</span><br><span class="line">imshow(<span class="string">"m4"</span>, m4);</span><br></pre></td></tr></table></figure>
 
-<p>quickdemo.cpp</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">名称：OpenCV4快速入门视频30讲 002- 图像色彩转换</span></span><br><span class="line"><span class="comment">时间：2020/12/14</span></span><br><span class="line"><span class="comment">作者：changsl</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"quickopencv.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickDemo::colorSpace_Demo</span><span class="params">(Mat &amp;<span class="built_in">image</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Mat gray,hsv;</span><br><span class="line">	cvtColor(<span class="built_in">image</span>,hsv,COLOR_BGR2HSV); <span class="comment">//转换为HSV</span></span><br><span class="line">	<span class="comment">// H 1~180,S:0-255饱和度，V:0-255亮度</span></span><br><span class="line">	cvtColor(<span class="built_in">image</span>,gray,COLOR_BGR2GRAY); <span class="comment">//转换为灰度</span></span><br><span class="line">	imshow(<span class="string">"hsv"</span>,hsv); <span class="comment">//显示图像</span></span><br><span class="line">	imshow(<span class="string">"gray"</span>, gray); <span class="comment">//显示图像</span></span><br><span class="line">	imwrite(<span class="string">"D:/hsv.png"</span>, hsv); <span class="comment">//保存图像</span></span><br><span class="line">	imwrite(<span class="string">"D:/gray.png"</span>, gray); <span class="comment">//保存图像啊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212534.png" alt="image-20201217212534698"></p>
+<ul>
+<li>使用<code>copyTo</code>赋值</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">m3 = Scalar(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_0"</span>, m3);</span><br><span class="line">m3.copyTo(m4);</span><br><span class="line">m4 = Scalar(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>);</span><br><span class="line">imshow(<span class="string">"m3_1"</span>, m3);</span><br><span class="line">imshow(<span class="string">"m4"</span>, m4);</span><br></pre></td></tr></table></figure>
 
-<p>day02.cpp</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">名称：OpenCV4快速入门视频30讲 002- 图像空间转换</span></span><br><span class="line"><span class="comment">时间：2020/12/15</span></span><br><span class="line"><span class="comment">作者：changsl</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"quickopencv.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>** argv)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Mat src = imread(<span class="string">"C:/Users/csl/Desktop/lena.jpg"</span>);</span><br><span class="line">	<span class="keyword">if</span> (src.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"There is not image..\n"</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	namedWindow(<span class="string">"输入窗口"</span>, WINDOW_FREERATIO);</span><br><span class="line">	imshow(<span class="string">"输入窗口"</span>, src);</span><br><span class="line">	QuickDemo qd;</span><br><span class="line">	qd.colorSpace_Demo(src);</span><br><span class="line">	waitKey(<span class="number">0</span>);</span><br><span class="line">	destroyAllWindows();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201217212701.png" alt="image-20201217212701169"></p>
 
-
-
-<h2 id="3-结果展示"><a href="#3-结果展示" class="headerlink" title="3.结果展示"></a>3.结果展示</h2><p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201215171922.png" alt="image-20201215171922182"></p>
-<center><font size=3>结果展示</font></center>
-
-<p><img src="https://changsl231-pics.oss-cn-beijing.aliyuncs.com/img/20201215172226.png" alt="image-20201215172226603"></p>
-<center><font size=3>保存结果</font></center>
     </div>
 
     
@@ -347,7 +367,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://changsl231.xyz/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson2%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%89%B2%E5%BD%A9%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2/" title="【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换">http://changsl231.xyz/2020/12/15/【OpenCV4快速入门视频30讲】lesson2：图像色彩空间转换/</a>
+    <a href="http://changsl231.xyz/2020/12/17/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson3%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%B5%8B%E5%80%BC/" title="【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值">http://changsl231.xyz/2020/12/17/【OpenCV4快速入门视频30讲】lesson3：图像对象的创建与赋值/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -378,13 +398,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/15/%E3%80%90OpenCV4%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%E8%A7%86%E9%A2%9130%E8%AE%B2%E3%80%91lesson1%EF%BC%9A%E5%9B%BE%E5%83%8F%E8%AF%BB%E5%8F%96%E4%B8%8E%E6%98%BE%E7%A4%BA/" rel="prev" title="【OpenCV4快速入门视频30讲】lesson1：图像读取与显示">
-      <i class="fa fa-chevron-left"></i> 【OpenCV4快速入门视频30讲】lesson1：图像读取与显示
+    <a href="/2020/12/15/%E3%80%90%E6%9D%8E%E5%AE%8F%E6%AF%852020%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91lesson1%EF%BC%9AIntroduction/" rel="prev" title="【李宏毅2020机器学习】lesson1：Introduction">
+      <i class="fa fa-chevron-left"></i> 【李宏毅2020机器学习】lesson1：Introduction
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/12/15/%E3%80%90%E6%9D%8E%E5%AE%8F%E6%AF%852020%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E3%80%91lesson1%EF%BC%9AIntroduction/" rel="next" title="【李宏毅2020机器学习】lesson1：Introduction">
-      【李宏毅2020机器学习】lesson1：Introduction <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -444,7 +461,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson2：图像色彩空间转换"><span class="nav-text">lesson2：图像色彩空间转换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-知识点"><span class="nav-text">1.知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-代码实现"><span class="nav-text">2.代码实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-结果展示"><span class="nav-text">3.结果展示</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson3-图像对象的创建与赋值"><span class="nav-text">lesson3: 图像对象的创建与赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-课程目标"><span class="nav-text">1. 课程目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-图像对象的创建与赋值"><span class="nav-text">2. 图像对象的创建与赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Mat的基本结构"><span class="nav-text">2.1 Mat的基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Mat对象的克隆与拷贝"><span class="nav-text">2.2 Mat对象的克隆与拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-直接创建Mat对象"><span class="nav-text">2.3 直接创建Mat对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-Mat对象的赋值"><span class="nav-text">2.4 Mat对象的赋值</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
